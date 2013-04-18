@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>PKU EECS Virtualization Lab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap-responsive.css">
+    <link type="text/css" rel="stylesheet" href="../css/vlab.css">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/mytest/test.js"></script>
+    <script src="../js/json.js"></script>
+    <script src="../js/mytest/test2.js"></script>
+    <script type="text/javascript" src="../js/vlab.js"></script>
+  </head>
+  <body>
+	<div id="loginform">
+	<form class="well" action="../studentauthen/" method="post">
+	{% csrf_token %}
+	<div class="login_l">用户名:</div><div class="login_r"><input type="text" name="studentID"></div>
+	<div class="login_l">密  码:</div><div class="login_r"><input type="password" name="studentPwd"></div>
+	<input type="submit" class="btn" value="登陆" style="margin-left:40px;">
+	</form>
+	</div>
+	<div id="LoginMessage">
+		{{ message }}
+	</div>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+from django.conf.urls import patterns, include, url
+
+# Uncomment the next two lines to enable the admin:
+from django.contrib import admin
+admin.autodiscover()
+
+urlpatterns = patterns('',
+    url(r'^bootstrap/css/(?P<path>.*)$','django.views.static.serve',{'document_root':"/home/tom/mytemplates/bootstrap/css"}),
+    url(r'^bootstrap/js/(?P<path>.*)$','django.views.static.serve',{'document_root':"/home/tom/mytemplates/bootstrap/js"}),
+    url(r'^bootstrap/img/(?P<path>.*)$','django.views.static.serve',{'document_root':"/home/tom/mytemplates/bootstrap/img"}),
+    url(r'^bootstrap/studentlogin/$','bootstrap.views.studentlogin'),
+    url(r'^bootstrap/studentauthen/$','bootstrap.views.studentauthen'),
+    url(r'^bootstrap/studentlogout/$','bootstrap.views.studentlogin'),
+    url(r'^bootstrap/listInstanceByCourseID/(?P<poll_id>\d+)/$','bootstrap.views.listInstanceByCourseID'),
+    url(r'^bootstrap/$','bootstrap.views.index'),
+    url(r'^bootstrap/listteachers/$','bootstrap.views.listteachers'),
+    url(r'^bootstrap/listcourses/$','bootstrap.views.listcourses'),
+    url(r'^bootstrap/liststudents/$','bootstrap.views.liststudents'),
+    url(r'^bootstrap/listdomainsbyIp/(?P<hostIP>((?:(?:25[0-5]|2[0-4]\d|[01]?\d?\d)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d?\d)))$','bootstrap.views.listdomainsbyIp'),
+    url(r'^bootstrap/listhosts/$','bootstrap.views.listhosts'),
+    url(r'^admin/', include(admin.site.urls)),
+)

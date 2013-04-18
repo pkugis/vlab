@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>PKU EECS Virtual Lab</title>
+	<link rel="stylesheet" type="text/css" href="../css/jqtransform.css" />
+	<link rel="stylesheet" type="text/css" href="../css/validationEngine.jquery.css" />
+	<link rel="stylesheet" type="text/css" href="../css/demo.css" />
+	<script type="text/javascript" src="../js/jquery.jqtransform.js"></script>
+	<script type="text/javascript" src="../js/jquery.validationEngine.js"></script>
+	<script type="text/javascript" src="../js/script.js"></script>
+</head>
+
+<body>
+<div id="main-container">
+	<div id="form-container">
+    	<h1>PKU EECS Virtual Lab</h1>
+   	<h2>Please log in...</h2>
+    
+    	<form id="contact-form" name="contact-form" method="post" action="/elab/authen">
+	<table width="100%" border="0" cellspacing="0" cellpadding="5">
+        <tr>
+          <td width="15%"><label for="name">Name</label></td>
+          <td width="70%"><input type="text"  name="name" id="name" /></td>
+          <td width="15%" id="errOffset">&nbsp;</td>
+        </tr>
+        <tr>
+          <td><label for="password">Password</label></td>
+          <td><input type="password" name="password" id="password" /></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td valign="top">&nbsp;</td>
+          <td colspan="2">
+          <button id="button" name="button" type="submit" class="jqTransformButton">
+          	<span>
+          		<span>Submit</span>	
+		</span>
+	  </button> 
+	  <!--input type="submit" name="button" id="button" value="Submit" class="jqTransformButton"/-->
+          <!--input type="reset" name="button2" id="button2" value="Reset" /-->
+          <!--?=$str?-->          
+          <img id="loading" src="../images/ajax-load.gif" width="16" height="16" alt="loading" />
+          </td>
+        </tr>
+      	</table>
+      	</form>
+      	<!--?=$success?-->
+</div>
+<div class="tutorial-info">	
+	This page is the entry of PKU EECS Virtual Lab System for teachers and administrators. 
+</div>
+</div>
+</body>
+</html>

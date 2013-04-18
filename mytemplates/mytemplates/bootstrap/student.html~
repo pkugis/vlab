@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>PKU EECS Virtualization Lab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap-responsive.css">
+    <link type="text/css" rel="stylesheet" href="../css/vlab.css">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/mytest/test.js"></script>
+    <script src="../js/json.js"></script>
+    <script src="../js/mytest/test2.js"></script>
+    <script type="text/javascript" src="../js/student.js"></script>
+  </head>
+  <body>
+    <div class="vlab_ex_top">
+      <div class="vlab_top">
+        <div class="container-fluid">
+          <div class="top_logo">
+            <a class="brand" href="#"><img src="../img/vlab_logo.png" width="111" height="20" alt="vlab logo" /></a> 
+          </div>
+          <div class="top_login">
+            <p class="navbar-text pull-right">欢迎登陆! 退出<a href="../studentlogout/" id="userid">{{ loginIDtag.studentName }}</a></p>  
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main_content">
+    <div class="container-fluid">
+          <div class="bs-docs-example">
+            <div class="tabbable tabs-left">
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#lA" data-toggle="tab">系统使用指南</a></li>
+                <li><a href="#lB" data-toggle="tab">个人信息</a></li>
+                <li><a href="#lC" data-toggle="tab">个人课表</a></li>
+		<li><a href="#lD" data-toggle="tab">消息</a></li>
+              </ul>
+
+
+              <div class="tab-content">
+                <div class="tab-pane active" id="lA">
+                </div>
+                <div class="tab-pane" id="lB">
+			<form class="form-horizontal" action="#" method="POST">
+				<table class="table" style="width:100%">
+					<tr>
+						<td>用户ID</td>
+						<td>{{ loginIDtag.studentID }}</td>
+					</tr>
+					<tr>
+						<td>用户旧密码</td>
+						<td><input type="password" name="oldpwd"></td>
+					</tr>
+					<tr>
+						<td>用户新密码</td>
+						<td><input type="password" name="newpwd"></td>
+					</tr>
+					<tr>
+						<td>重复新密码</td>
+						<td><input type="password" name="confirmnewpwd"></td>
+					</tr>
+					<tr>					
+						<td>姓名</td>
+						<td>{{ loginIDtag.studentName }}</td>
+					</tr>
+					<tr>					
+						<td>年龄</td>
+						<td><input type="text" name="age" value={{ loginIDtag.studentAge }}></td>
+					</tr>
+					<tr>
+						<td>性别</td>
+						<td>
+							<select name="sex" size="1">
+								<option value={{ loginIDtag.studentGender }} selected>{{ loginIDtag.studentGender }}</option>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>邮箱</td>
+						<td><input type="text" name="email" value={{ loginIDtag.studentEmail }}></td>
+					</tr>
+					<tr>
+						<td>手机</td>
+						<td><input type="text" name="mobile" value={{ loginIDtag.studentMobile }}></td>
+					</tr>
+				</table>
+				<input class="btn" type="submit" value="更新信息">
+			</form>
+		</div>
+		<div class="tab-pane" id="lC">
+			<h5>所有您参与的课程</h5>
+			<table class="table table-bordered" style="width:100%">
+			   <thead>
+		            <tr>
+		              <th>课程ID</th>
+			      <th>课程名</th>
+		              <th>授课教师</th>
+		              <th>开放时间</th>
+		            </tr>
+			   </thead>
+			   <tbody id="selectivesbody">
+				<tr>
+					<td><a href="../listInstances"+{{ selectiveInfo.course.courseID }}+"/">{{ selectiveInfo.course.courseID }}</a></td>
+					<td>{{ selectiveInfo.course.courseName }}</td>
+					<td>{{ selectiveInfo.course.teacher.teacherName }}</td>
+					<td>{{ selectiveInfo.course.opendates }}</td>	
+				</tr>
+			   	<!--here are dynamic content-->
+		           </tbody>
+		       </table>
+		</div>
+		<div class="tab-pane" id="lD">
+		<div>
+              </div>
+            </div>
+          </div>
+    </div>
+    </div>
+  </body>
+</html>

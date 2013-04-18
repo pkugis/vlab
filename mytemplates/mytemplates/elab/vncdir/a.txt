@@ -1,0 +1,20 @@
+../vnc_javasrc/README:customize its behavior. Most parameters directly correspond to the settings
+../vnc_javasrc/README:    desktop size, the window will resize automatically when remote desktop
+../vnc_javasrc/README:    parameter is set to "auto", automatic scaling is performed. Auto-scaling
+../vnc_javasrc/README:    updates, then the viewer will disconnect automatically. If the value is
+../vnc_javasrc/README:    0, the viewer will not disconnect automatically. This option was added to
+Binary file ../vnc_javasrc/VncViewer.class matches
+../vnc_javasrc/WhatsNew:    factor or automatic. If Java 2D API is available (Java 1.2 and
+../vnc_javasrc/WhatsNew:  - Java viewer: Automatic encoding selection based on measuring
+../vnc_javasrc/WhatsNew:    automatically.
+../vnc_javasrc/WhatsNew:  - Unix version: New "RunCommand" command to customize the X11
+../vnc_javasrc/LICENCE.TXT:    1 and 2 above on a medium customarily used for software interchange; or,
+../vnc_javasrc/LICENCE.TXT:    customarily used for software interchange; or,
+../vnc_javasrc/LICENCE.TXT:void, and will automatically terminate your rights under this License.
+../vnc_javasrc/LICENCE.TXT:Program), the recipient automatically receives a license from the
+../vnc_javasrc/VncCanvas.java:				     2 * Math.min(insets.top, insets.bottom));
+../vnc_javasrc/VncCanvas.java:    //     2) Taxkbar on Windows (usually about 28 px on bottom)
+../vnc_javasrc/ChangeLog:Starting implementation of automatic encoding selection. Right now,
+../vnc_javasrc/ChangeLog:automatically when VNC connection is established.
+Binary file ../vnc_javasrc/VncCanvas.class matches
+../vnc_javasrc/VncViewer.java:    String pw = "tomtom";

@@ -1,0 +1,55 @@
+.main_content {
+	margin:0 auto;
+	width:980px;
+}
+.vlab_ex_top {
+	background:#ff6600;
+}
+.vlab_top {
+	background:#FF6600;
+	width:980px;
+	margin:0 auto;
+}
+.top_logo {
+	float:left;
+	margin:0px 20px 10px 0px;
+}
+
+.top_login {
+	float:right;
+	margin:20px 0px 0px 0px;
+}
+
+.function_description {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.search_box {
+	float: left;
+}
+
+.add_button {
+	float:right;
+}
+
+.btn_list {
+	float:right;
+}
+
+#loginform {
+	width:480px;
+	margin:0 auto;
+	padding:200px 0px;
+}
+
+.login_l {
+	float:left;
+	margin-left:40px;
+	margin-right:0px;
+	margin-top:0px;
+	margin-bottom:0px;
+	padding:0px;
+	width:50px;
+}
+
+

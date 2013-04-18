@@ -1,0 +1,127 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>PKU EECS Virtual Lab</title>
+		<link type="text/css" rel="stylesheet" href="../css/style.css">
+		<link type="text/css" rel="stylesheet" href="../css/superfish.css"/>
+		<link type="text/css" rel="stylesheet" href="../css/superfish-vertical.css"/>
+		<link type="text/css" rel="stylesheet" href="../css/superfish-navbar.css"/>
+		<link type="text/css" rel="stylesheet" href="../css/stylish-select.css"/>		
+	        <link type="text/css" rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+
+                <script src="../js/superfish.js"></script>	
+		<script src="../js/hoverIntent.manified.js"></script>
+		<script src="../js/supersubs.js"></script>
+		<!--script src="../js/jquery-1.7.1.min.js"></script-->
+		<script src="../js/jquery.stylish-select.js"></script>
+		<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+		<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+            	<script>
+			/*$(document).ready(function(){
+               	 		$('#my-dropdown, #my-dropdown2').sSelect();
+				$("#tabs").tabs();
+            		});
+			*/
+			$(function() {
+				$("#tabs").tabs();
+				$('#my-dropdown,#my-dropdown2').sSelect();
+			});
+		</script>
+	</head>
+	<body> 
+		<div class="top">
+			<div class="logo">
+				logo here!
+			</div>
+			<div class="login_state">
+				<p>Administrator, welcome to PKU EECS Virtual Lab <a href="#">Logout</a></p>
+			</div>	
+		</div>
+		<div class="main">
+			<div class="nav_left" clear> 
+				<ul class="sf-menu sf-vertical">
+					<li><a href="#">Overview</a></li>
+					<li><a href="../clusters">Clusters</a></li>
+					<li><a href="../courses">Courses</a></li>
+					<li class="current"><a href="../create">Create VM</a></li>
+					<li><a href="../teachers">Teachers</a></li>
+					<li><a href="../students">Students</a></li>
+				</ul>	
+			</div>
+			<div class="content_right">
+				<div id="tabs">
+				<ul>
+				<li><a href="#tab-1">submit requirements</a></li>
+				<li><a href="#tab-2">upload templates</a></li>
+				<li><a href="#tab-3">online configure</a></li>
+				</ul>
+				<div id="tab-1">
+				<form>
+        			<div class="selCont">
+           			<h2>Please select OS types:</h2>
+            			<select id="my-dropdown2" name="my-dropdown">
+                			<optgroup label="Windows">
+                    				<option value="1">XP_32bit</option>
+						<option value="2">XP_64bit</option>
+	                    			<option value="2">Win7_32bit</option>
+						<option value="">Win7_64bit</option>
+        	            			<option selected="3" value="mercedes">Win8_32bit</option>
+						<option value="">Win8_64bit</option>
+						<option value="">Server2008</option>
+                			</optgroup>
+                			<optgroup label="Ubuntu">
+	                    			<option value="4">Ubuntu12.10_32bit</option>
+						<option value="5">Ubuntu12.10_64_bit</option>
+                    				<option value="6">Ubuntu12.04TLS_32bit</option>
+						<option value="7">Ubuntu12.04TLS_64bit</option>
+ 				                <option value="">gOS</option>
+                			</optgroup>
+            			</select>
+				</div>
+				<div class="selectSoftware">
+				<h2>Please select softwares:</h2>
+					<table border="1">
+					<tr>
+					<td><input type="checkbox"/><label class="sn">gcc</label></td>
+					<td><input type="checkbox"/><label class="sn">eclipse</label></td>
+					<td><input type="checkbox"/><label class="sn">VS2008</label></td>
+					<td><input type="checkbox"/><label class="sn">MAX_PLUS_II</label></td>
+					</tr>
+					<tr>
+					<td><input type="checkbox"/><label class="sn">Quartus II</label></td>
+					<td><input type="checkbox"/><label class="sn">dosbox</label></td>
+					<td><input type="checkbox"/><label class="sn">MIT scheme</label></td>
+					<td><input type="checkbox"/><label class="sn">bochs</label></td>
+					</tr>
+					<tr>
+					<td><input type="checkbox"/><label class="sn">jdk</label></td>
+					<td><input type="checkbox"/><label class="sn">jre</label></td>
+					<td><input type="checkbox"/><label class="sn">gdb</label></td>
+					<td><input type="checkbox"/><label class="sn">Verilog</label></td>
+					</tr>
+					<tr>
+					<td><input type="checkbox"/><label class="sn">Apache</label></td>
+					<td><input type="checkbox"/><label class="sn">mysql</label></td>
+					<td><input type="checkbox"/><label class="sn">sqlserver</label></td>
+					<td><input type="checkbox"/><label class="sn">PHP</label></td>
+					</tr>
+					<tr>
+					<td><input type="checkbox"/><label class="sn">ROSE</label></td>
+					<td><input type="checkbox"/><label class="sn">VISIO</label></td>
+					<td><input type="checkbox"/><label class="sn">Hadoop</label></td>
+					<td></td>
+					</tr>
+					</table>
+				</div>
+				<input type="submit" name="submit" value="Submit"/>
+				</form>
+				</div>
+				<div id="tab-2">
+				</div>
+				<div id="tab-3">
+				</div>
+				</div>
+        		</div>
+		</div>
+	</body>
+</html>

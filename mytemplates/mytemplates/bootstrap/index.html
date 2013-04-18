@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>PKU EECS Virtualization Lab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-responsive.css">
+    <link type="text/css" rel="stylesheet" href="css/vlab.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/mytest/test.js"></script>
+    <script src="js/json.js"></script>
+    <script src="js/mytest/test2.js"></script>
+    <script type="text/javascript" src="js/vlab.js"></script>
+  </head>
+  <body>
+    <div class="vlab_ex_top">
+      <div class="vlab_top">
+        <div class="container-fluid">
+          <div class="top_logo">
+            <a class="brand" href="#"><img src="img/vlab_logo.png" width="111" height="20" alt="vlab logo" /></a> 
+          </div>
+          <div class="top_login">
+            <p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>  
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main_content">
+    <div class="container-fluid">
+          <div class="bs-docs-example">
+            <div class="tabbable tabs-left">
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#lA" data-toggle="tab">系统使用指南</a></li>
+                <li><a href="#lB" data-toggle="tab">课程</a></li>
+                <li><a href="#lC" data-toggle="tab">教师</a></li>
+                <li><a href="#1D" data-toggle="tab">学生</a></li>
+                <li><a href="#1E" data-toggle="tab">虚拟机</a></li>
+                <li><a href="#1F" data-toggle="tab">偏好配置</a></li>
+                <li><a href="#1G" data-toggle="tab">镜像模板</a></li>
+                <li><a href="#1H" data-toggle="tab">统计信息</a></li>
+              </ul>
+
+
+              <div class="tab-content">
+                <div class="tab-pane active" id="lA">
+                  <div class="accordion" id="accordion2">
+                    <div class="accordion-group">
+                      <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                          About the Courses section
+                        </a>
+                      </div>
+                      <div id="collapseOne" class="accordion-body collapse in">
+                        <div class="accordion-inner">
+                          <h3>
+                          <p>Our Courses section will implement all the following functionalities:</p>
+                          <p>1. List all the courses that have been registered in the system in table format. Create multiple pages if it demands.<button>Pre</button><button>1</button><button>2</button>...<button>8</button><button>Next</button></p>
+                          <p>2. All the courses can be ordered by CourseID, CourseRegisterTime, etc. (Optional)</p>
+                          <p>3. Administrator can search for some course by its CourseName, CourseID, TeacherName, TeacherID, etc. Autocomplete the query if possible! <input type="text" class="span3" style="margin: 0 auto;" data-provide="typeahead" data-items="4" data-source='["Introduction to algorithms","Virtualization and storage","wxl","lyw"]'>
+                          </p>
+                          <p>4. List all available results that match the query</p>
+                          <p>5. For each course record, add certain links to some fileds. For example: <a>Yingwei Luo</a>, <a>Introduction to algorithms</a>.</p>
+                          <p>6. Administrator can <button class="btn btn-primary">add</button> one course and fulfill the more detail informations about the course</p>
+                          <img src="img/add_a_course.jpg">
+                          <p>7. When have access to the more detail page about a course, the administrator can <button class="btn btn-primary">delete</button> the course or <button class="btn btn-primary">modify</button> the detail informations about it.</p>
+                          <p>8. On the detail page, administrator can also upload a selective file and generate the relationships between each student account and a certain course.</p>
+                          <img src="img/add_students_to_course.jpg">
+
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-group">
+                      <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                          About the Teachers section
+                        </a>
+                      </div>
+                      <div id="collapseTwo" class="accordion-body collapse">
+                        <div class="accordion-inner">
+                          <h3>
+                            <p>Our Teachers section will implement all the following functionalities:</p>
+                            <p>1. List all the teachers that have been registered in the system in table format. Create multiple pages if it demands.</p>
+                            <p>2. For each record, add the detail page link to the teachername field for example:<a href="">Yingwei Luo.</a></p>
+                            <p>3. Administrator can also <button class="btn btn-primary">add a teacher</button> and <button class="btn btn-primary">modify</button>/<button class="btn btn-primary">delete</button> existing teacher accounts.</p>
+                            <p>4. List all the courses taught by the teacher on the detail page.</p> 
+                            <p>5. List all the detail information about the teacher on the detail page.</p>
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="tab-pane" id="lB">
+                  <h4>
+                    All the courses registered in this vlab system.
+                  </h4>
+                  <div class="search_box">
+                    <input type="text" class="span3" id="coursequery" style="margin: 0 auto;" data-provide="typeahead" data-items="4" data-source='["Introduction to algorithms","Virtualization and storage","wxl","lyw"]'><button type="button" class="btn" id="listcourses">查看注册课程</button>
+                  </div>
+                  <div class="add_button">
+                    <button type="button" class="btn">添加课程</button>
+                  </div>
+		<div id="coursetable">			
+                  <table class="table table-bordered" style="width:100%">
+                    <thead>
+                      <tr>
+                        <th>CourseID</th>
+                        <th>CourseName</th>
+                        <th>Teacher</th>
+                        <th>Time</th>	
+			<th>Operations</th>
+                      </tr>
+		    </thead>
+		    <tbody id="coursesbody">
+                    	<!--dynamic content here-->
+		    </tbody>
+                  </table>
+		</div>
+                  <div class="btn_list">
+                    <button class="btn">前一页</button><button class="btn">1</button><button class="btn">2</button><button class="btn">后一页</button>
+                  </div>
+                </div>
+
+
+
+                <div class="tab-pane" id="lC">
+                  <h4>
+                    All the teachers registered in this vlab system.
+                  </h4>
+                  <div class="search_box">
+                    <input type="text" class="span3" id="teacherquery" style="margin: 0 auto;" data-provide="typeahead" data-items="4" data-source='["Introduction to algorithms","Virtualization and storage","wxl","lyw"]'><button type="button" class="btn" id="listteachers">查看注册教师</button>
+                  </div>
+                  <div class="add_button">
+		    <a href="#addteacherModal" role="button" class="btn" data-toggle="modal">添加教师</a>
+                  	<div id="addteacherModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    	<div class="modal-header">
+                      		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                      		<h3 id="myModalLabel">添加教师</h3>
+                   	</div>
+ 	                <div class="modal-body">
+                      		<form id="addteacherform">
+					<span>TeacherID </span><input type="text" name="id4teacher"><br>
+					<span>TeacherName </span><input type="text" name="name4teacher"><br>
+					<span>TeahcerEmail </span><input type="text" name="email4teacher">
+				</form>
+                    	</div>
+                    	<div class="modal-footer">
+                      		<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+                      		<button id="addteacherbutton" class="btn btn-primary">保存</button>
+                    	</div>
+		  	</div>
+		</div>
+		<div id="teachertable">
+                  <table class="table table-bordered">
+		   <thead>
+                    <tr>
+                      <th>TeacherID</th>
+                      <th>TeacherEmail</th>
+                      <th>TeacherName</th>
+                      <th>Operations</th>
+                    </tr>
+	           </thead>
+	           <tbody id="teachersbody">
+	           	<!--here are dynamic content-->
+		   </tbody>
+                  </table>
+		</div>
+                  <div class="btn_list">
+                    <button class="btn">前一页</button><button class="btn">1</button><button class="btn">2</button><button class="btn">后一页</button>
+                  </div>
+                </div>
+
+
+
+                <div class="tab-pane" id="1D">
+                  <h4>
+                    All the teachers registered in this vlab system.
+                  </h4>
+                  <div class="search_box">
+                    <input type="text" class="span3" id="studentquery" style="margin: 0 auto;" data-provide="typeahead" data-items="4" data-source='["Introduction to algorithms","Virtualization and storage","wxl","lyw"]'><button type="button" class="btn" id="liststudents">查看注册学生</button>
+                  </div>
+                  <div class="add_button">
+                    <button type="button" class="btn">添加学生</button><button class="btn">上传学生名单</button>
+                  </div>
+                  <table class="table table-bordered">
+	           <thead>
+                    <tr>
+                      <th>StudentID</th>
+		      <th>StudentEmail</th>
+                      <th>StudentName</th>
+                      <th>Operations</th>
+                    </tr>
+		   </thead>
+		   <tbody id="studentsbody">
+		   	<!--here are dynamic content-->
+                   </tbody>
+                  </table>
+                  <div class="btn_list">
+                    <button class="btn">前一页</button><button class="btn">1</button><button class="btn">2</button><button class="btn">后一页</button>
+                  </div>
+                </div>
+
+
+
+                <div class="tab-pane" id="1E">
+                  <h4>List all the hosts in our computing experimental center</h4>
+                  
+                  <div class="search_box">
+                    <input type="text" class="span3" id="studentquery" style="margin: 0 auto;" data-provide="typeahead" data-items="4" data-source='["Introduction to algorithms","Virtualization and storage","wxl","lyw"]'><button type="button" class="btn" id="listhosts">查看物理机</button>
+                  </div>
+                  <table class="table table-bordered" style="width:100%">  
+                    <thead>  
+                      <tr>  
+                        <th>HostID</th>  
+                        <th>Memory</th>  
+                        <th>IP</th>
+			<th>Operations</th>  
+                      </tr>  
+                    </thead>  
+                    <tbody id="hostsbody">  
+                    	<!--dynamic content here.-->
+		    </tbody>  
+                  </table>
+                </div>
+                
+		<div class="tab-pane" id="1F">
+
+                </div>
+
+
+
+                <div class="tab-pane" id="1G">
+                  <div class="tabbable tabs-top">
+                    <ul class="nav nav-tabs">
+                      <li class="active"><a href="#2A" data-toggle="tab">Submit requirements</a></li>
+                      <li><a href="#2B" data-toggle="tab">Upload templates</a></li>
+                      <li><a href="#2C" data-toggle="tab">Configure online</a></li>
+                    </ul>
+                    <div class="tab-content">
+                      <div class="tab-pane" id="2A">
+                        <form class="well form-search">  
+                          <input type="text" class="input-medium search-query">  
+                          <button type="submit" class="btn">Search</button>  
+                        </form>  
+                      </div>
+                      <div class="tab-pane" id="2B">
+                        <span class="btn btn-file">Upload<input type="file" /></span>
+                      </div>
+                      <div class="tab-pane" id="2C">
+                        
+                      </div>
+                    </div>
+                </div>
+              </div>
+                
+		
+		<div class="tab-pane" id="1H">
+                      <script src="js/highcharts.js"></script>
+                      <script src="js/modules/exporting.js"></script>
+                  <div id="mycontainer" style="width: 60%; height: 400px; margin: 20px 0px"></div>
+                  <p></p>
+                  <div id="mycontainer2" style="width: 60%; height: 400px; margin: 20px 0px"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>PKU EECS Virtualization Lab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap-responsive.css">
+    <link type="text/css" rel="stylesheet" href="../css/vlab.css">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/vlab.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/mytest/test.js"></script>
+    <script src="../js/mytest/test2.js"></script>
+  </head>
+  <body>	
+    <div class="vlab_ex_top">
+      <div class="vlab_top">
+        <div class="container-fluid">
+          <div class="top_logo">
+            <a class="brand" href="#"><img src="../img/vlab_logo.png" width="111" height="20" alt="vlab logo" /></a>
+          </div>
+          <div class="top_login">
+            <p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main_content">
+	<h3>List all guest domains running on host {{ IP }}</h3>
+	<table class="table table-bordered" style="width:100%">
+		<thead>
+			<th>OSType</th>
+			<th>State</th>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Operations</th>
+		</thead>
+		<tbody>
+			{% for item in domainsinfo_host %}
+				<tr>
+				{% for k,v in item.iteritems %}
+					<td>{{v}}</td>
+				{% endfor %}
+				<td>
+                          	<div class="btn-group" data-toggle="buttons-radio">
+	                           <button type="button" class="btn btn-primary">Resume</button>
+         	                   <button type="button" class="btn btn-primary">Snap</button>
+                	           <button type="button" class="btn btn-primary">Stop</button>
+                        	   <button type="button" class="btn btn-primary">Suspend</button>
+                            	   <button type="button" class="btn btn-primary">Migrate</button>
+                          	</div>
+				</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+    </div>
+ </body>
+</html>
